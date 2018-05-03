@@ -1,0 +1,29 @@
+{
+  "uri" : "local://E_Ie_44OOkBg8aOzg-EdT8/",
+  "name" : "cjs_super's University",
+  "category" : ".courses",
+  "parent" : "local://KliJt80kdh9pvadaK0dp41/",
+  "flags" : "U",
+  "lvars" : [ ],
+  "vars" : [ {
+    "name" : "_courseIndex_lastVisitCourse",
+    "expr" : {
+      "str" : "local://mrbDDDlXkWBzr4Ptgvjpz5/",
+      "type" : "STRING"
+    }
+  }, {
+    "name" : "courseIndex",
+    "expr" : {
+      "concept" : "/common/univ/Im-hwEGR8wB4_4Q6c20se6/",
+      "bindings" : {
+        "lastVisitCourse" : "_courseIndex_lastVisitCourse"
+      },
+      "type" : "CONCEPT"
+    }
+  } ],
+  "isas" : [ {
+    "var" : "courseIndex"
+  } ],
+  "encodedidxhash" : "",
+  "isLambda" : false
+}

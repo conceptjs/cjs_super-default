@@ -1,0 +1,38 @@
+{
+  "uri" : "local://uC2K6qQB3q9Gm4QugYos19/",
+  "name" : "concepts_view_css",
+  "category" : "",
+  "parent" : "local://cOrSMAXRRBA6UqI4iBZDLA/",
+  "flags" : "U",
+  "lvars" : [ ],
+  "vars" : [ {
+    "name" : "cssContent",
+    "expr" : {
+      "str" : ".concepts{\n    margin-top: 20px;\n    margin-bottom: 20px;\n}\n\ndiv.search{\n    padding-top: 4px;\n    padding-right: 35px;\n    margin-bottom: 20px;\n    padding-left: 0px;\n}\n\n.search-input{\n    margin-top: 5px;\n    padding-right: 10px;\n    height: 30px;\n    width: 400px;\n    display: inline;\n}\n\n.right-inner-addon {\n    position: relative;\n}\n                \n.right-inner-addon input {\n    padding-right: 30px;    \n}\n                \n.right-inner-addon i {\n    position: absolute;\n    right: 0px;\n    padding: 10px 12px;\n}\n\n.hand {\n    cursor: pointer;\n}\n\ntd {\n    word-break: break-all !important;\n}",
+      "strEditMode" : "css",
+      "type" : "STRING"
+    }
+  }, {
+    "name" : "_cssFile_fileName",
+    "expr" : {
+      "str" : "concepts_view_css",
+      "strEditMode" : "",
+      "type" : "STRING"
+    }
+  }, {
+    "name" : "cssFile",
+    "expr" : {
+      "concept" : "/common/core/D_CaDRd425Aqj4mtY9Oh1B/",
+      "bindings" : {
+        "css" : "cssContent",
+        "fileName" : "_cssFile_fileName"
+      },
+      "type" : "CONCEPT"
+    }
+  } ],
+  "isas" : [ {
+    "var" : "cssFile"
+  } ],
+  "encodedidxhash" : "",
+  "isLambda" : false
+}

@@ -1,0 +1,30 @@
+{
+  "uri" : "local://Pwi2uyP6c4Acu4OvT5Nme0/",
+  "name" : "Update all Repositories",
+  "category" : "",
+  "parent" : "local://9kvAxApFXJBh4atc3bxcXB/",
+  "flags" : "U",
+  "lvars" : [ ],
+  "vars" : [ {
+    "name" : "htmlTemplate",
+    "expr" : {
+      "str" : "<html>\n    <head>\n        \n    </head>\n    <body>\n        <div id=\"messages\">\n            \n        </div>\n        \n        <script>\n            $cjs.repo.shareRepos(function(data){\n                _.each(data, function(x){\n                    console.log(\"process repository with user:\"+x.user+\", repoName:\"+x.repoName+\"...\");\n                    if (x.rcuri){\n                        var concDef = $cjs.def(x.rcuri);\n                        var bindVar = {\n                            name: \"_repo_holder\",\n                            expr: {\n                                str: \"\"\n                            }\n                        }\n                        var newVar = {\n                            name: \"repo\",\n                            expr: {\n                                concept: \"/common/core/dikjRMQUWrB_rK4hvxvxP8/\",\n                                bindings: {\n                                    holder: \"_repo_holder\"\n                                }\n                            }\n                        };\n                        concDef.vars = concDef.vars.filter(function(element){\n                            return element.name != \"repo\" && element.name != \"_repo_repoUri\" && element.name != \"_repo_holder\";\n                        })\n                        concDef.vars.push(bindVar);\n                        concDef.vars.push(newVar);\n                        concDef.isas = concDef.isas.filter(function(element){\n                            return element.var != \"repo\";\n                        })\n                        concDef.isas.push({\n                            var: \"repo\"\n                        });\n                        $cjs.save(concDef);\n                    }\n                    console.log(\"Done!\");\n                })\n            },\n            function(jqXHR, textStatus, errorThrown){\n                console.log(\"get repositories failed with response:\" + jqXHR.responseText);\n            });\n        </script>\n    </body>\n</html>",
+      "strEditMode" : "html",
+      "type" : "STRING"
+    }
+  }, {
+    "name" : "page",
+    "expr" : {
+      "concept" : "/common/core/iduwOQ2KZv8MWqamwqb6AE/",
+      "bindings" : {
+        "html" : "htmlTemplate"
+      },
+      "type" : "CONCEPT"
+    }
+  } ],
+  "isas" : [ {
+    "var" : "page"
+  } ],
+  "encodedidxhash" : "",
+  "isLambda" : false
+}

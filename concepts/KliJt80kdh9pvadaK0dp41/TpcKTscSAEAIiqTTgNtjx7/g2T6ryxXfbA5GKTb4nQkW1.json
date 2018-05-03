@@ -1,0 +1,30 @@
+{
+  "uri" : "local://g2T6ryxXfbA5GKTb4nQkW1/",
+  "name" : "Stress test generator",
+  "category" : "",
+  "parent" : "local://TpcKTscSAEAIiqTTgNtjx7/",
+  "flags" : "U",
+  "lvars" : [ ],
+  "vars" : [ {
+    "name" : "htmlTemplate",
+    "expr" : {
+      "str" : "<html>\n    <head>\n        \n    </head>\n    <body>\n        <div class=\"container\">\n        <div class=\"form-group\">\n            <label for=\"log\">Test Logs:</label>\n            <textarea class=\"form-control\" rows=\"30\" id=\"log\"></textarea>\n            <button id=\"generate\" type=\"button\" class=\"btn btn-primary\">Generate</button>\n        </div>\n        </div>\n    </body>\n    \n    <script>\n        $(function(){\n            $(\"#generate\").click(function(){\n            var logLines = [];\n            \n            var martecDevConcs = $cjs(\"/martecdev/development/srz1ELLnJN8pZK8RDwswyA/\").childrenUris();\n            console.log(\"obtain martect concepts:\"+martecDevConcs.length);\n            var sessionCT = 0;\n            for(i=45;i>0 && sessionCT <= 30;i--){\n                var yokeUser = \"yoketao\"+i;\n                try{\n                    var yokeUserRepo = $cjs.repo(\"/\"+yokeUser+\"/private/\");\n                    var yokeUserDashboardUri = $cjs(\"/\"+yokeUser+\"/yoke/\").childrenUris(\".dashboard\");\n                    logLines.push(\"/auth/login method=POST contents=\\\"username=\"+yokeUser+\"&passwd=passwd\\\"\");\n                    logLines.push(\"/view\"+yokeUserDashboardUri[0]);\n                    logLines.push(\"/view\"+yokeUserRepo.uri);\n                    logLines.push(\" \");\n                    logLines.push(\"/view\"+martecDevConcs[sessionCT*3]);\n                    logLines.push(\"/view\"+martecDevConcs[sessionCT*3+1]);\n                    logLines.push(\"/view\"+martecDevConcs[sessionCT*3+2]);\n                    logLines.push(\" \");\n                    sessionCT++;\n                }catch(error){\n                    console.log(\"user \" +yokeUser+\" doesn't exist skip\");\n                }\n            }\n            \n            $(\"#log\").val(logLines.join(\"\\n\"));\n            });\n        })\n    </script>\n</html>",
+      "strEditMode" : "html",
+      "type" : "STRING"
+    }
+  }, {
+    "name" : "page",
+    "expr" : {
+      "concept" : "/common/core/iduwOQ2KZv8MWqamwqb6AE/",
+      "bindings" : {
+        "html" : "htmlTemplate"
+      },
+      "type" : "CONCEPT"
+    }
+  } ],
+  "isas" : [ {
+    "var" : "page"
+  } ],
+  "encodedidxhash" : "",
+  "isLambda" : false
+}

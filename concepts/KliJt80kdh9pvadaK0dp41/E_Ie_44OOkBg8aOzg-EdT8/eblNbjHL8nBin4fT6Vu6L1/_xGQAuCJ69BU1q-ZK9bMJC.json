@@ -1,0 +1,52 @@
+{
+  "uri" : "local://_xGQAuCJ69BU1q-ZK9bMJC/",
+  "name" : "Course 100 Reader",
+  "category" : ".univ",
+  "parent" : "local://eblNbjHL8nBin4fT6Vu6L1/",
+  "flags" : "U",
+  "lvars" : [ ],
+  "vars" : [ {
+    "name" : "_reader_course",
+    "expr" : {
+      "concept" : "/common/univ/61VaKe6zRtAdYqlaAgHs2E/",
+      "type" : "CONCEPT"
+    }
+  }, {
+    "name" : "_reader_readerType",
+    "expr" : {
+      "str" : "programmer",
+      "strEditMode" : "",
+      "type" : "STRING"
+    }
+  }, {
+    "name" : "_reader_curUnitNumber",
+    "expr" : {
+      "num" : 0,
+      "type" : "NUMBER"
+    }
+  }, {
+    "name" : "_reader_returnUri",
+    "expr" : {
+      "str" : "/common/gallery/",
+      "strEditMode" : "",
+      "type" : "STRING"
+    }
+  }, {
+    "name" : "reader",
+    "expr" : {
+      "concept" : "/common/univ/E40ZSmDZ3q89eafTdvRjvC/",
+      "bindings" : {
+        "course" : "_reader_course",
+        "readerType" : "_reader_readerType",
+        "curUnitNumber" : "_reader_curUnitNumber",
+        "returnUri" : "_reader_returnUri"
+      },
+      "type" : "CONCEPT"
+    }
+  } ],
+  "isas" : [ {
+    "var" : "reader"
+  } ],
+  "encodedidxhash" : "",
+  "isLambda" : false
+}

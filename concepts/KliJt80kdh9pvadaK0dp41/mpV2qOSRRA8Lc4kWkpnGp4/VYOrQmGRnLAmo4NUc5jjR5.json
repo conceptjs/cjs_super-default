@@ -1,0 +1,15 @@
+{
+  "uri" : "local://VYOrQmGRnLAmo4NUc5jjR5/",
+  "name" : "Next Week Agenda",
+  "category" : "",
+  "parent" : "local://mpV2qOSRRA8Lc4kWkpnGp4/",
+  "flags" : "U",
+  "lvars" : [ ],
+  "vars" : [ ],
+  "isas" : [ {
+    "concept" : "local://tFfxR4IYghAZPKBQ_LLs07/",
+    "alias" : ""
+  } ],
+  "encodedidxhash" : "",
+  "isLambda" : false
+}

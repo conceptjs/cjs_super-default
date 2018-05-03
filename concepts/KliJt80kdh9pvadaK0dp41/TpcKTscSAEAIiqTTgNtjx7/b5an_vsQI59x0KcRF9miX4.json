@@ -1,0 +1,40 @@
+{
+  "uri" : "local://b5an_vsQI59x0KcRF9miX4/",
+  "name" : "CSV File Upload",
+  "category" : "",
+  "parent" : "local://TpcKTscSAEAIiqTTgNtjx7/",
+  "flags" : "U",
+  "lvars" : [ {
+    "name" : "fileProcessFunc",
+    "type" : "/common/types/t6plZKh35i93o453wH2NX2/"
+  } ],
+  "vars" : [ {
+    "name" : "htmlTemplate",
+    "expr" : {
+      "str" : "<html>\n    <head>\n        \n    </head>\n    <body>\n        <div class=\"container\">\n            <div class=\"title\">\n                <h1>CSV Upload Utility</h1>\n            </div>\n            <form class=\"form-horizontal\">\n                <div class=\"form-group\">\n                    <label for=\"inputUri\" class=\"control-label col-xs-2\">CSV File</label>\n                    <div class=\"col-xs-10\">\n                        <input type=\"file\" id=\"uploadCSV\" name=\"uploadCSV\" enctype=\"multipart/form-data\"/>\n                    </div>\n                </div>\n                \n                <div class=\"form-group\">\n                    <label for=\"result\" class=\"control-label col-xs-2\">Result</label>\n                    <div class=\"col-xs-10\">\n                        <textarea readonly class=\"form-control\" id=\"result\" rows=\"50\" data-bind=\"value: result\"></textarea>\n                    </div>\n                </div>\n            </form>\n        </div>\n        \n        <script>\n            {{{fileProcessFunc}}}\n            \n            function CSVFileUploadVM(){\n                var self = this;\n                \n                this.result = ko.observable();\n                \n                this.showParseError = function(msg){\n                    self.result(msg);\n                }\n                \n                this.uploadCSV = function(results){\n                    fileProcessor.process(results, self);\n                }\n            }\n        \n            $(function() {\n                var csvFileUploadVM = new CSVFileUploadVM();\n                ko.applyBindings(csvFileUploadVM);\n                \n                 $(\"#uploadCSV\").change(function(evt){\n                    Papa.parse(evt.target.files[0], {\n                        delimiter: \",\",\n                        header: true,\n                        skipEmptyLines: true,\n                        fastMode: false,\n\t                    complete: function(results) {\n\t                        if (results.errors && results.errors.length > 0){\n\t                            if (results.errors[0].code == \"TooManyFields\" || results.errors[0].code == \"TooFewFields\"){\n\t                                csvFileUploadVM.showParseError(\"The following row has incorrect number of columns: Row #\"+(results.errors[0].row+2)+\" \"+results.errors[0].message);\n\t                            }else{\n\t                                csvFileUploadVM.showParseError(\"invalid CSV file, please check your uploaded file.\");\n\t                            }\n\t                        }else{\n\t\t                        //console.log(\"Finished:\", results.data);\n\t\t                        csvFileUploadVM.uploadCSV(results);\n\t                        }\n\t                        $(\"#uploadCSV\").val(null);\n\t                    },\n\t                    error: function(error, file){\n\t                        csvFileUploadVM.showParseError(\"invalid CSV file, please check your uploaded file.\");\n\t                        $(\"#uploadCSV\").val(null);\n\t                    }\n                    });\n                });\n             });\n        </script>\n        \n        <script type=\"text/javascript\" src=\"//cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.min.js\"></script>\n    </body>\n</html>",
+      "strEditMode" : "html",
+      "type" : "STRING"
+    }
+  }, {
+    "name" : "_page_propertyMap",
+    "expr" : {
+      "script" : "return {\n    \"fileProcessFunc\": fileProcessFunc\n};",
+      "type" : "SCRIPT"
+    }
+  }, {
+    "name" : "page",
+    "expr" : {
+      "concept" : "/common/core/Xfh2VQ4HSK9klqbqqR-eBB/",
+      "bindings" : {
+        "htmlTemplate" : "htmlTemplate",
+        "propertyMap" : "_page_propertyMap"
+      },
+      "type" : "CONCEPT"
+    }
+  } ],
+  "isas" : [ {
+    "var" : "page"
+  } ],
+  "encodedidxhash" : "",
+  "isLambda" : true
+}

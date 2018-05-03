@@ -1,0 +1,21 @@
+{
+  "uri" : "local://N2wM1cdyXbB1sqwkl8BskF/",
+  "name" : "Concepts",
+  "category" : "",
+  "parent" : "local://KliJt80kdh9pvadaK0dp41/",
+  "flags" : "U",
+  "lvars" : [ ],
+  "vars" : [ {
+    "name" : "username",
+    "expr" : {
+      "str" : "cabezadeturco",
+      "type" : "STRING"
+    }
+  } ],
+  "isas" : [ {
+    "concept" : "local://cOrSMAXRRBA6UqI4iBZDLA/"
+  } ],
+  "encodedidxhash" : "",
+  "isLambda" : false,
+  "activeScript" : "{\n    setUsername: function(username) {\n        home.prop(\"username\", username);\n    }\n}\n"
+}

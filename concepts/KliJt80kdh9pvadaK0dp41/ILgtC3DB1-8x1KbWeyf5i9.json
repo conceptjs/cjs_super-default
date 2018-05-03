@@ -1,0 +1,15 @@
+{
+  "uri" : "local://ILgtC3DB1-8x1KbWeyf5i9/",
+  "name" : "User Statistics",
+  "category" : "",
+  "parent" : "local://KliJt80kdh9pvadaK0dp41/",
+  "flags" : "U",
+  "lvars" : [ ],
+  "vars" : [ ],
+  "isas" : [ {
+    "concept" : "local://ZfDRQ4P3H3B7Ka4dW7uGZ3/",
+    "alias" : ""
+  } ],
+  "encodedidxhash" : "",
+  "isLambda" : false
+}

@@ -1,0 +1,20 @@
+{
+  "uri" : "local://VsYb_oaY9JAh-adPMoTmO3/",
+  "name" : "User Management",
+  "category" : "",
+  "parent" : "local://KliJt80kdh9pvadaK0dp41/",
+  "flags" : "U",
+  "lvars" : [ ],
+  "vars" : [ {
+    "name" : "excludeUsers",
+    "expr" : {
+      "json" : [ "common", "cjs_super" ],
+      "type" : "JSON"
+    }
+  } ],
+  "isas" : [ {
+    "concept" : "local://2RXuXvodVH9sO44KnlSmt6/"
+  } ],
+  "encodedidxhash" : "",
+  "isLambda" : false
+}

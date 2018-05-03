@@ -1,0 +1,38 @@
+{
+  "uri" : "local://WCW7uMZD9eAnwK20O-_Nu4/",
+  "name" : "user_management_view",
+  "category" : "",
+  "parent" : "local://2RXuXvodVH9sO44KnlSmt6/",
+  "flags" : "U",
+  "lvars" : [ ],
+  "vars" : [ {
+    "name" : "cssContent",
+    "expr" : {
+      "str" : ".usermanagement{\n    margin-top: 20px;\n    margin-bottom: 20px;\n}\n\n.user-avatar-image{\n    border-radius: 2px;\n    height: 50px;\n    width: 50px;\n    display: inline-block!important;\n    margin-left: 12px;\n    border-style: solid;\n    border-width: 3px;\n    border-color: #f2f2f2;\n}\n",
+      "strEditMode" : "css",
+      "type" : "STRING"
+    }
+  }, {
+    "name" : "_cssFile_fileName",
+    "expr" : {
+      "str" : "user_management_view",
+      "strEditMode" : "",
+      "type" : "STRING"
+    }
+  }, {
+    "name" : "cssFile",
+    "expr" : {
+      "concept" : "/common/core/D_CaDRd425Aqj4mtY9Oh1B/",
+      "bindings" : {
+        "css" : "cssContent",
+        "fileName" : "_cssFile_fileName"
+      },
+      "type" : "CONCEPT"
+    }
+  } ],
+  "isas" : [ {
+    "var" : "cssFile"
+  } ],
+  "encodedidxhash" : "",
+  "isLambda" : false
+}
